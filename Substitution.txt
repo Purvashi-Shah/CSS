@@ -1,0 +1,35 @@
+def encrypt(plain_text, key):
+    encrypted_text = ""
+    for char in plain_text:
+        if char != '#':
+            encrypted_char = chr(ord(char) + key)
+            encrypted_text += encrypted_char
+    return encrypted_text
+
+def decrypt(encrypted_text, key):
+    decrypted_text = ""
+    for char in encrypted_text:
+        if char != '#':
+            decrypted_char = chr(ord(char) - key)
+            decrypted_text += decrypted_char
+    return decrypted_text
+
+plain_text = input("Enter the value: ")
+key = 3
+encrypted_text = encrypt(plain_text, key)
+print("Encrypted:", encrypted_text)
+decrypted_text = decrypt(encrypted_text, key)
+print("Decrypted:", decrypted_text)
+
+
+
+
+A substitution cipher is a classic method of encryption used to conceal the meaning of a message by replacing each letter in the plaintext with another letter according to a predetermined system or key. This method operates on the principle of substituting one symbol for another. In its simplest form, substitution ciphers involve replacing each letter of the alphabet with another letter, number, or symbol.
+
+One of the most well-known substitution ciphers is the Caesar cipher, named after Julius Caesar, who is believed to have used it to encrypt his private correspondence. In the Caesar cipher, each letter in the plaintext is shifted a certain number of places down or up the alphabet. For example, with a shift of 3, the letter A would be replaced by D, B by E, and so on.
+
+Another example of a substitution cipher is the Atbash cipher, which involves replacing each letter with its counterpart in the reverse alphabet. For instance, A becomes Z, B becomes Y, and so forth. The Atbash cipher is one of the earliest known substitution ciphers and was used by ancient Hebrew scribes.
+
+While substitution ciphers are relatively easy to understand and implement, they are also susceptible to cryptanalysis. One common method of breaking substitution ciphers is frequency analysis, where the frequency of letters or symbols in the ciphertext is analyzed to deduce the original plaintext. For example, in English text, the letter E is the most commonly used letter, so the most frequent letter in the ciphertext is likely to correspond to E in the plaintext.
+
+Despite their vulnerabilities, substitution ciphers have been employed throughout history and continue to serve as the basis for more complex encryption methods. They provide a foundation for understanding cryptographic principles and are often used as educational tools in learning about encryption and decryption techniques.

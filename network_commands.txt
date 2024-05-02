@@ -1,0 +1,302 @@
+C:\Users\Purvashi Shah>ping 8.8.8.8
+
+Pinging 8.8.8.8 with 32 bytes of data:
+Reply from 8.8.8.8: bytes=32 time=2966ms TTL=117
+Reply from 8.8.8.8: bytes=32 time=8ms TTL=117
+Reply from 8.8.8.8: bytes=32 time=8ms TTL=117
+Reply from 8.8.8.8: bytes=32 time=15ms TTL=117
+
+Ping statistics for 8.8.8.8:
+    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+Approximate round trip times in milli-seconds:
+    Minimum = 8ms, Maximum = 2966ms, Average = 749ms
+
+EXPLANATION:
+time=2966ms, time=8ms, time=8ms, time=15ms: These are the round-trip times (RTT) in milliseconds for each packet sent. The RTT measures the time it takes for a packet to travel from the source to the destination and back again. 
+
+TTL=117: Time to Live (TTL) is a value in the packet that limits the lifespan of the packet. Each time a router forwards a packet, it decrements the TTL value by one. If the TTL reaches zero, the packet is discarded. This value helps prevent packets from endlessly circulating in a network loop.
+
+Ping statistics: Provides an overview of the ping test results, including the number of packets sent, received, and lost.
+
+--------------------------xox------------------------------------
+
+C:\Users\Purvashi Shah>hostname
+Vulcan
+
+--------------------------xox------------------------------------
+
+C:\Users\Purvashi Shah>getmac
+
+Physical Address    Transport Name
+
+=================== ==========================================================
+C4-23-60-98-0A-26   \Device\Tcpip_{8FA250A8-BC9A-4E14-B5C2-7A57F5178EC8}
+0A-00-27-00-00-0E   \Device\Tcpip_{A4DA3CC1-8975-4C0A-9201-7ACD0FEF0BF8}
+
+EXPLANATION: 
+The getmac command retrieves the Media Access Control (MAC) addresses for all network adapters on a system. Here's the breakdown of the output:-
+
+Physical Address: Displays the MAC address of each network adapter.
+Transport Name: Specifies the network interface associated with each MAC address.
+
+-------------------------xox--------------------------------------------
+
+C:\Users\Purvashi Shah>arp -a
+
+Interface: 192.168.0.104 --- 0xc
+  Internet Address      Physical Address      Type
+  192.168.0.1           e4-c3-2a-f5-ca-84     dynamic
+  224.0.0.22            01-00-5e-00-00-16     static
+  224.0.0.251           01-00-5e-00-00-fb     static
+  224.0.0.252           01-00-5e-00-00-fc     static
+  239.255.255.250       01-00-5e-7f-ff-fa     static
+  255.255.255.255       ff-ff-ff-ff-ff-ff     static
+
+Interface: 192.168.56.1 --- 0xe
+  Internet Address      Physical Address      Type
+  192.168.56.255        ff-ff-ff-ff-ff-ff     static
+  224.0.0.22            01-00-5e-00-00-16     static
+  224.0.0.251           01-00-5e-00-00-fb     static
+  224.0.0.252           01-00-5e-00-00-fc     static
+  239.255.255.250       01-00-5e-7f-ff-fa     static
+
+EXPLANATION:-
+The arp -a command displays the ARP (Address Resolution Protocol) cache on your computer, which contains mappings of IP addresses to physical MAC addresses. Here's the breakdown of the output:
+
+For Interface: 192.168.0.104 --- 0xc
+
+Internet Address: Displays the IP address of the device.
+Physical Address: Shows the corresponding MAC address of the device.
+Type: Indicates whether the mapping is static (manually configured) or dynamic (learned automatically through ARP requests).
+
+-------------------------xox--------------------------------------------
+
+C:\Users\Purvashi Shah>nslookup 8.8.8.8
+Server:  UnKnown
+Address:  192.168.0.1
+
+Name:    dns.google
+Address:  8.8.8.8
+
+EXPLANATION: The nslookup command is used to query the DNS (Domain Name System) servers to obtain domain name or IP address mappings. Here's the breakdown of the output:
+
+-----------------------------------xox-----------------------------------------
+
+C:\Users\Purvashi Shah>tracert 8.8.8.8
+
+Tracing route to dns.google [8.8.8.8]
+over a maximum of 30 hops:
+
+  1     1 ms     1 ms     1 ms  192.168.0.1
+  2     9 ms     1 ms     2 ms  103.31.144.10
+  3     *       10 ms     3 ms  103.31.144.1
+  4     8 ms     2 ms     4 ms  103.31.144.21
+  5    43 ms     9 ms    31 ms  142.250.165.192
+  6    14 ms     8 ms     6 ms  72.14.238.215
+  7     9 ms     3 ms     3 ms  209.85.250.139
+  8     *        8 ms     7 ms  dns.google [8.8.8.8]
+
+EXPLANATION:
+The tracert command traces the route that data packets take from your computer to a specified destination, displaying information about each hop along the route. Here's the breakdown of the output:
+
+Tracing route to dns.google [8.8.8.8]: Indicates that the trace is being performed to the destination dns.google with the IP address 8.8.8.8.
+Over a maximum of 30 hops: Specifies that the trace will show up to 30 hops between your computer and the destination.
+Each line represents a different hop along the route:
+
+Hop number: The number of the hop in the route.
+RTT (Round-Trip Time): The time it takes for a packet to travel from your computer to that hop and back again, measured in milliseconds.
+IP address: The IP address of the router or intermediary device at that hop.
+Hostname (if available): The hostname associated with the IP address, if it can be resolved.
+
+
+-----------------------------------------------xox--------------------------------------------
+
+C:\Users\Purvashi Shah>ipconfig
+
+Windows IP Configuration
+
+
+Ethernet adapter Ethernet:
+
+   Connection-specific DNS Suffix  . :
+   Link-local IPv6 Address . . . . . : fe80::7d9c:fbc7:8aa9:6041%14
+   IPv4 Address. . . . . . . . . . . : 192.168.56.1
+   Subnet Mask . . . . . . . . . . . : 255.255.255.0
+   Default Gateway . . . . . . . . . :
+
+Wireless LAN adapter Local Area Connection* 1:
+
+   Media State . . . . . . . . . . . : Media disconnected
+   Connection-specific DNS Suffix  . :
+
+Wireless LAN adapter Local Area Connection* 2:
+
+   Media State . . . . . . . . . . . : Media disconnected
+   Connection-specific DNS Suffix  . :
+
+Wireless LAN adapter Wi-Fi:
+
+   Connection-specific DNS Suffix  . :
+   Link-local IPv6 Address . . . . . : fe80::4d01:407a:a7ee:deef%12
+   IPv4 Address. . . . . . . . . . . : 192.168.0.104
+   Subnet Mask . . . . . . . . . . . : 255.255.255.0
+   Default Gateway . . . . . . . . . : 192.168.0.1
+
+
+EXPLANATION: 
+The ipconfig command displays the IP configuration for all network adapters on your computer. Here's the breakdown of the output:
+
+Ethernet adapter Ethernet:
+Connection-specific DNS Suffix: The DNS suffix associated with this connection.
+Link-local IPv6 Address: The IPv6 address for this adapter.
+IPv4 Address: The IPv4 address for this adapter.
+Subnet Mask: The subnet mask for this adapter.
+Default Gateway: The default gateway for this adapter.
+
+Wireless LAN adapter Local Area Connection 1* and Local Area Connection 2*:
+These adapters are currently disconnected, as indicated by "Media State: Media disconnected".
+
+Wireless LAN adapter Wi-Fi:
+Connection-specific DNS Suffix: The DNS suffix associated with this connection.
+Link-local IPv6 Address: The IPv6 address for this adapter.
+IPv4 Address: The IPv4 address for this adapter.
+Subnet Mask: The subnet mask for this adapter.
+Default Gateway: The default gateway for this adapter.
+
+----------------------------------------xox----------------------------------------------
+
+C:\Users\Purvashi Shah>netstat
+
+Active Connections
+
+  Proto  Local Address          Foreign Address        State
+  TCP    192.168.0.104:49475    20.198.119.143:https   ESTABLISHED
+  TCP    192.168.0.104:61055    whatsapp-chatd-edge-shv-02-bom1:5222  ESTABLISHED
+  TCP    192.168.0.104:61060    20.212.88.117:https    ESTABLISHED
+  TCP    192.168.0.104:61061    sa-in-f188:5228        ESTABLISHED
+  TCP    192.168.0.104:61239    20.249.186.67:https    ESTABLISHED
+  TCP    192.168.0.104:61263    20.198.119.84:https    ESTABLISHED
+  TCP    192.168.0.104:61438    a23-206-173-11:https   CLOSE_WAIT
+  TCP    192.168.0.104:61439    a23-206-173-11:https   CLOSE_WAIT
+  TCP    192.168.0.104:61442    a23-206-173-11:https   CLOSE_WAIT
+  TCP    192.168.0.104:61443    a23-206-173-11:https   CLOSE_WAIT
+  TCP    192.168.0.104:61444    a23-206-173-11:https   CLOSE_WAIT
+  TCP    192.168.0.104:61445    a23-206-173-11:https   CLOSE_WAIT
+  TCP    192.168.0.104:61451    a23-206-173-72:https   CLOSE_WAIT
+  TCP    192.168.0.104:61452    a23-206-173-72:https   CLOSE_WAIT
+  TCP    192.168.0.104:61453    a23-206-173-72:https   CLOSE_WAIT
+  TCP    192.168.0.104:61472    20.65.133.230:https    ESTABLISHED
+  TCP    192.168.0.104:61473    20.189.172.223:https   ESTABLISHED
+  TCP    192.168.0.104:61501    e2a:https              TIME_WAIT
+  TCP    192.168.0.104:61502    bom07s16-in-f3:https   ESTABLISHED
+  TCP    192.168.0.104:64248    a23-212-252-81:https   CLOSE_WAIT
+  TCP    192.168.0.104:64252    a23-209-103-19:https   CLOSE_WAIT
+
+EXPLANATION: 
+
+The netstat command displays active TCP connections, listening ports, and related network statistics. Here's the breakdown of the output:
+
+Proto: Indicates the protocol used for the connection (TCP or UDP).
+Local Address: Displays the local IP address and port number for the connection.
+Foreign Address: Shows the foreign (remote) IP address and port number.
+State: Represents the state of the connection.
+
+-------------------------------------------xox----------------------------------------
+
+C:\Users\Purvashi Shah>route print
+===========================================================================
+Interface List
+ 14...0a 00 27 00 00 0e ......VirtualBox Host-Only Ethernet Adapter
+ 11...c4 23 60 98 0a 27 ......Microsoft Wi-Fi Direct Virtual Adapter
+ 15...c6 23 60 98 0a 26 ......Microsoft Wi-Fi Direct Virtual Adapter #2
+ 12...c4 23 60 98 0a 26 ......Intel(R) Wi-Fi 6 AX201 160MHz
+  1...........................Software Loopback Interface 1
+===========================================================================
+
+IPv4 Route Table
+===========================================================================
+Active Routes:
+Network Destination        Netmask          Gateway       Interface  Metric
+          0.0.0.0          0.0.0.0      192.168.0.1    192.168.0.104     40
+        127.0.0.0        255.0.0.0         On-link         127.0.0.1    331
+        127.0.0.1  255.255.255.255         On-link         127.0.0.1    331
+  127.255.255.255  255.255.255.255         On-link         127.0.0.1    331
+      192.168.0.0    255.255.255.0         On-link     192.168.0.104    296
+    192.168.0.104  255.255.255.255         On-link     192.168.0.104    296
+    192.168.0.255  255.255.255.255         On-link     192.168.0.104    296
+     192.168.56.0    255.255.255.0         On-link      192.168.56.1    281
+     192.168.56.1  255.255.255.255         On-link      192.168.56.1    281
+   192.168.56.255  255.255.255.255         On-link      192.168.56.1    281
+        224.0.0.0        240.0.0.0         On-link         127.0.0.1    331
+        224.0.0.0        240.0.0.0         On-link      192.168.56.1    281
+        224.0.0.0        240.0.0.0         On-link     192.168.0.104    296
+  255.255.255.255  255.255.255.255         On-link         127.0.0.1    331
+  255.255.255.255  255.255.255.255         On-link      192.168.56.1    281
+  255.255.255.255  255.255.255.255         On-link     192.168.0.104    296
+===========================================================================
+Persistent Routes:
+  None
+
+IPv6 Route Table
+===========================================================================
+Active Routes:
+ If Metric Network Destination      Gateway
+  1    331 ::1/128                  On-link
+ 14    281 fe80::/64                On-link
+ 12    296 fe80::/64                On-link
+ 12    296 fe80::4d01:407a:a7ee:deef/128
+                                    On-link
+ 14    281 fe80::7d9c:fbc7:8aa9:6041/128
+                                    On-link
+  1    331 ff00::/8                 On-link
+ 14    281 ff00::/8                 On-link
+ 12    296 ff00::/8                 On-link
+===========================================================================
+Persistent Routes:
+  None
+
+EXPLANATION:
+The route print command displays the IP routing table, which shows the routes your computer uses to forward packets to their destinations. Here's the breakdown of the output:
+
+Interface List: Lists the network interfaces on your computer along with their associated MAC addresses.
+IPv4 Route Table: Displays the IPv4 routing table, which contains routes for IPv4 network destinations.
+Active Routes: Shows the active routes currently being used by your computer.
+Network Destination: The destination network or IP address.
+Netmask: The subnet mask associated with the destination network.
+Gateway: The gateway used to reach the destination network.
+Interface: The network interface through which packets are sent to reach the destination.
+Metric: A value used by the routing algorithm to determine the best route when multiple routes are available.
+
+----------------------------------------xox--------------------------------------
+
+C:\Users\Purvashi Shah>pathping 8.8.8.8
+
+Tracing route to dns.google [8.8.8.8]
+over a maximum of 30 hops:
+  0  Vulcan [192.168.0.104]
+  1  192.168.0.1
+  2  103.31.144.10
+  3  103.31.144.1
+  4  103.31.144.21
+  5  142.250.165.192
+  6  72.14.238.215
+  7  209.85.250.139
+  8  dns.google [8.8.8.8]
+
+Computing statistics for 200 seconds...
+
+EXPLANATION:
+The pathping command combines the features of ping and tracert, providing information about the path that packets take to reach a destination along with network latency and packet loss statistics. Here's the breakdown of the output:
+
+Tracing route to dns.google [8.8.8.8]: Indicates that the trace is being performed to the destination dns.google with the IP address 8.8.8.8.
+Over a maximum of 30 hops: Specifies that the trace will show up to 30 hops between your computer and the destination.
+Each line represents a different hop along the route:
+
+Hop number: The number of the hop in the route.
+IP address or hostname: Displays the IP address or hostname of the router or intermediary device at that hop.
+Hostname (if available): The hostname associated with the IP address, if it can be resolved.
+Latency: The round-trip time (RTT) in milliseconds for packets to travel from your computer to that hop and back again.
+Statistics: After tracing the route, the command computes statistics for a specified duration (200 seconds in your case), including latency and packet loss.
+
+_----------------------------------------------END-------------------------------------------------
+ALL THE BEST DIDIS
